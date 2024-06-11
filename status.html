@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+</head>
+
+<body>
+    <h1>Show user current status using javascript</h1>
+    <p id="status">  </p>
+    <script>
+        function updateStatus() {
+            let currentStatus = document.getElementById('status');
+            if (navigator.onLine) {
+                currentStatus.textContent = "Online";
+            } else {
+                currentStatus.textContent = "Offline";
+            }
+        }
+        updateStatus();
+
+        window.addEventListener('online', updateStatus);
+        window.addEventListener('offline', updateStatus);
+    </script>
+</body>
+
+</html>
